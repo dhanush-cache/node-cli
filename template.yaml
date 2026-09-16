@@ -1,0 +1,36 @@
+name: node-cli
+type: project
+version: 0.1.0
+description: "Minimal Node.js CLI application with Commander"
+tags: ["node", "javascript", "cli"]
+
+variables:
+  - name: package_name
+    prompt: "Package name"
+    type: string
+    role: project_name
+    default: "my-node-cli"
+
+  - name: description
+    prompt: "Brief description of the package"
+    type: string
+    default: "A CLI tool built with Node.js"
+
+  - name: author
+    prompt: "Author name"
+    type: string
+    default: "Blueprint User"
+
+includes:
+  - name: license-mit
+    enabled_by_default: true
+    inherits:
+      author: author
+
+files:
+  - src: package.json.tmpl
+    dest: package.json
+  - src: index.js.tmpl
+    dest: index.js
+  - src: README.md.tmpl
+    dest: README.md

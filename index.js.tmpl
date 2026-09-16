@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+const { program } = require('commander');
+
+program
+  .name('{{ .package_name }}')
+  .description('{{ .description }}')
+  .version('0.1.0')
+  .option('-n, --name <string>', 'name to greet', 'world')
+  .action((options) => {
+    console.log(`Hello, ${options.name} from {{ .package_name }}!`);
+  });
+
+program.parse(process.argv);
