@@ -22,7 +22,7 @@ variables:
     default: "Blueprint User"
 
 includes:
-  - name: license-mit
+  - ref: license-mit
     enabled_by_default: true
     inherits:
       author: author
